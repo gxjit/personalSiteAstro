@@ -11,9 +11,6 @@ dependencies:
   '@picocss/pico':
     specifier: ^2.0.6
     version: 2.0.6
-  '@types/alpinejs':
-    specifier: ^3.13.10
-    version: 3.13.10
   alpinejs:
     specifier: ^3.13.10
     version: 3.13.10
