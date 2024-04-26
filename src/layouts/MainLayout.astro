@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import data from '../data/data.json'
+import Nav from '../components/Nav.astro'
+
+const { title } = Astro.props
+---
+
+<BaseLayout title={title}>
+  <main>
+    <article>
+      <header>
+        <div>
+          <Nav data={data} />
+        </div>
+      </header>
+      <slot />
+      <footer class='text-center px-3'>© Gurjit Singh</footer>
+    </article>
+  </main>
+</BaseLayout>

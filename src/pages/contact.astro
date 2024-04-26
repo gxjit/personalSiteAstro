@@ -1,0 +1,47 @@
+---
+import SendIcon from '../icons/SendIcon.astro'
+import MainLayout from '../layouts/MainLayout.astro'
+import data from '../data/data.json'
+---
+
+<MainLayout>
+  <form class='p-3' action={data.formSubmit} method='post'>
+    <fieldset>
+      <input type='text' name='name' placeholder='Name' aria-label='name' />
+      <input
+        type='email'
+        name='email'
+        placeholder='Email'
+        aria-label='Email'
+        autocomplete='email'
+      />
+      <textarea
+        name='message'
+        placeholder='Write a short message...'
+        aria-label='message'></textarea>
+      <div class='text-center'>
+        <button class='outline contrast'><SendIcon /></button>
+      </div>
+    </fieldset>
+  </form>
+</MainLayout>
+
+<!-- <fieldset>
+      <label>
+        Name
+        <input
+          name='full_name'
+          placeholder='Full name'
+          autocomplete='full-name'
+        />
+      </label>
+      <label>
+        E-mail
+        <input
+          type='email'
+          name='email'
+          placeholder='Email'
+          autocomplete='email'
+        />
+      </label>
+    </fieldset> -->

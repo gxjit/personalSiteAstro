@@ -1,0 +1,45 @@
+---
+import GithubIcon from '../icons/GithubIcon.astro'
+import MailIcon from '../icons/MailIcon.astro'
+import HomeIcon from '../icons/HomeIcon.astro'
+import LinkedInIcon from '../icons/LinkedInIcon.astro'
+import ThemeIcon from '../icons/ThemeIcon.astro'
+
+const { data } = Astro.props
+const currentPath = Astro.url.pathname
+console.log(currentPath)
+
+const activePath = (x) => (currentPath === x ? 'secondary' : 'contrast')
+---
+
+<nav class='px-3 d-flex justify-content-center'>
+  <ul class=''>
+    <li>
+      <a href='/' class=`${activePath("/")}`><HomeIcon /></a>
+    </li>
+    <li>
+      <a href='/contact' class=`${activePath("/contact")}`>
+        <MailIcon />
+      </a>
+    </li>
+    <li>
+      <a href={data.github} target='_blank' class=`contrast`>
+        <GithubIcon />
+      </a>
+    </li>
+    <li>
+      <a href={data.linkedIn} target='_blank' class='contrast'>
+        <LinkedInIcon />
+      </a>
+    </li>
+    <li>
+      <a
+        href='#'
+        class='contrast'
+        @click=`theme = theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);`
+        ><ThemeIcon /></a
+      >
+    </li>
+  </ul>
+</nav>

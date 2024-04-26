@@ -1,0 +1,29 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import { Image } from 'astro:assets'
+
+const { title, jpg } = Astro.props.frontmatter || Astro.props
+const avatarImg = await import(`../images/${jpg}.jpg`).then((x) => x.default)
+---
+
+<MainLayout>
+  <section class='row'>
+    <aside class='col-3 p-3 text-end'>
+      <Image
+        class='w-100 rounded-circle'
+        width='256'
+        height='256'
+        src={avatarImg}
+        alt='avatar'
+      />
+      <!-- <img class='w-100 rounded-circle' src={avatarImg.src} alt='avatar' /> -->
+      <!-- {console.log(avatarImg.src)} -->
+    </aside>
+    <div class='col text-start p-3'>
+      <slot />
+      <!-- <h1>{title}</h1>
+      <h5>Subtitle</h5>
+      <p>About Me.</p> -->
+    </div>
+  </section>
+</MainLayout>
