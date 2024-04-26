@@ -1,9 +1,10 @@
-import { defineConfig } from 'astro/config';
-import purgecss from "astro-purgecss";
+import { defineConfig } from 'astro/config'
+import purgecss from 'astro-purgecss'
 
-import alpinejs from "@astrojs/alpinejs";
+import alpinejs from '@astrojs/alpinejs'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [purgecss(), alpinejs()]
-});
+  // TODO: add purgecss purgecss(),
+  integrations: [alpinejs()],
+})
